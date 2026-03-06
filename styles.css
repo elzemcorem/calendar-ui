@@ -50,13 +50,11 @@ body {
    APP WRAPPER
    ================================================================ */
 .app-wrapper {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 12px;
   height: 100vh;
-  padding: 16px;
+  position: relative;
+  z-index: 1;
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -66,25 +64,25 @@ body {
    ================================================================ */
 .app-bar {
   flex-shrink: 0;
-  background: #fff;
-  border-radius: 16px;
-  border: 1px solid #e8eaf0;
-  padding: 0 20px;
-  height: var(--app-bar-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  padding: 0 20px;
+  height: 60px;
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+  gap: 20px;
 }
 
 .app-bar-left {
   display: flex;
   align-items: center;
   gap: 20px;
-  min-width: 0;
+  flex-shrink: 0;
+  height: 100%;
 }
 
-.logo-gradient {
+.app-logo {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -92,59 +90,52 @@ body {
   flex-shrink: 0;
 }
 
-.nav-links {
+.app-nav {
   display: flex;
   align-items: center;
   gap: 2px;
+  height: 100%;
 }
+.btn-import:hover { border-color: #a0a4b0; }
 
 .nav-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
   font-size: 14px;
   font-weight: 500;
   color: #6b7080;
-  text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 8px;
-  position: relative;
-  transition: color .2s;
+  padding: 0 10px;
+  height: 100%;
+  border-bottom: 2px solid transparent;
+  transition: color .2s, border-bottom-color .2s;
   white-space: nowrap;
 }
-
 .nav-link:hover { color: #1a1a2e; }
-
 .nav-link.active {
   color: #1a1a2e;
   font-weight: 600;
-}
-
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  /* align with the bottom border of the app bar (height 58px, link centered) */
-  bottom: calc((var(--app-bar-h) / -2) + 12px);
-  left: 10px;
-  right: 10px;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 2px;
+  border-bottom-color: #7c5cfc;
 }
 
 .app-bar-right {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
 }
 
-/* Search bar */
 .search-bar {
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 8px;
   background: #f5f6f8;
+  border: 1px solid #e8eaf0;
   border-radius: var(--radius-pill);
-  padding: 7px 14px;
-  min-width: 220px;
+  padding: 7px 12px;
+  width: 220px;
   color: #a0a4b0;
 }
 
@@ -153,77 +144,74 @@ body {
   background: transparent;
   font-family: var(--font);
   font-size: 13px;
-  color: #1a1a2e;
+  color: #6b7080;
   flex: 1;
   outline: none;
   min-width: 0;
 }
-
 .search-bar input::placeholder { color: #a0a4b0; }
 
 .kbd-badge {
   background: #e8eaf0;
+  color: #a0a4b0;
   border-radius: 6px;
   padding: 2px 6px;
   font-size: 11px;
   font-weight: 600;
-  color: #6b7080;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
-/* Import button */
-.btn-import {
+.import-btn {
   border: 1.5px solid #e0e2e8;
-  background: transparent;
-  border-radius: var(--radius-pill);
-  padding: 6px 16px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 6px 14px;
   font-family: var(--font);
   font-size: 13px;
-  font-weight: 500;
-  color: #1a1a2e;
+  font-weight: 600;
+  color: #6b7080;
   cursor: pointer;
-  transition: border-color .2s;
   white-space: nowrap;
+  transition: border-color .2s, color .2s;
 }
-.btn-import:hover { border-color: #a0a4b0; }
+.import-btn:hover { border-color: #b0b4c0; color: #1a1a2e; }
 
-/* Bell icon button in app bar */
-.bell-icon-btn {
+.notif-btn {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
-  border: 1px solid #e8eaf0;
-  background: transparent;
+  border-radius: 10px;
+  border: 1.5px solid #e0e2e8;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   color: #6b7080;
-  transition: background .2s;
+  transition: border-color .2s;
   flex-shrink: 0;
 }
-.bell-icon-btn:hover { background: #f5f6f8; }
+.notif-btn:hover { border-color: #b0b4c0; }
 
-/* User avatar in app bar */
-.user-avatar {
+.user-avatar-btn {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   background: linear-gradient(135deg, #ff6b6b, #a855f7);
-  flex-shrink: 0;
+  border: none;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 /* ================================================================
-   BODY ROW (icon sidebar + main panel)
+   APP BODY (icon sidebar + main panel row)
    ================================================================ */
-.body-row {
+.app-body {
   flex: 1;
   display: flex;
-  gap: 12px;
-  min-height: 0;
-  overflow: hidden;
+  overflow: visible;
+  gap: 16px;
+  padding: 16px 20px 20px 0;
 }
 
 /* ================================================================
@@ -233,26 +221,26 @@ body {
   width: 60px;
   flex-shrink: 0;
   background: #fff;
-  border-radius: var(--radius-panel);
-  border: 1px solid #e8eaf0;
+  border-right: 1px solid #e8eaf0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 14px 0 14px;
+  padding: 12px 8px;
 }
 
 .icon-sidebar-top {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  flex: 1;
 }
 
 .icon-sidebar-bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 8px;
 }
 
 .sidebar-icon-btn {
@@ -268,29 +256,28 @@ body {
   color: #6b7080;
   transition: background .2s, color .2s;
 }
-.sidebar-icon-btn:hover { background: #f5f6f8; }
-
+.sidebar-icon-btn:hover { background: #f0f1f5; color: #1a1a2e; }
 .sidebar-icon-btn.active {
   background: var(--accent-light);
   color: var(--accent);
 }
 
-.sidebar-plus-btn {
-  width: 44px;
-  height: 44px;
+.sidebar-icon-plus {
+  width: 40px;
+  height: 40px;
   border-radius: 12px;
-  border: 1.5px solid #e8eaf0;
-  background: transparent;
-  font-size: 20px;
-  color: #6b7080;
-  cursor: pointer;
+  border: 1.5px solid #e0e2e8;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  color: #6b7080;
+  font-size: 20px;
+  font-weight: 300;
   transition: border-color .2s, color .2s;
-  line-height: 1;
 }
-.sidebar-plus-btn:hover { border-color: var(--accent); color: var(--accent); }
+.sidebar-icon-plus:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ================================================================
    MAIN PANEL
@@ -772,26 +759,20 @@ body {
    ================================================================ */
 @media (max-width: 900px) {
   body { overflow: auto; }
-  .app-wrapper {
-    height: auto;
-    min-height: 100vh;
-  }
-  .body-row {
-    flex-direction: column;
-    overflow: visible;
-  }
+  .app-wrapper { height: auto; min-height: 100vh; }
+  .app-bar { flex-wrap: wrap; height: auto; padding: 12px 16px; gap: 12px; }
+  .app-nav { display: none; }
+  .search-bar { width: 160px; }
+  .app-body { flex-direction: column; height: auto; padding: 0 12px 12px; gap: 0; }
   .icon-sidebar {
     width: 100%;
     height: auto;
     flex-direction: row;
-    padding: 10px 14px;
-    border-radius: var(--radius-btn);
+    border-right: none;
+    border-bottom: 1px solid #e8eaf0;
+    padding: 8px 12px;
   }
-  .icon-sidebar-top {
-    flex-direction: row;
-    flex: 1;
-  }
-  .icon-sidebar-bottom { padding: 0; }
-  .nav-links { display: none; }
+  .icon-sidebar-top { flex-direction: row; flex: 1; gap: 4px; }
+  .icon-sidebar-bottom { padding-bottom: 0; }
   .event-modal { left: 10px; right: 10px; width: auto; }
 }

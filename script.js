@@ -2,7 +2,6 @@
    script.js — Calendar Dashboard interactivity
    ================================================================ */
 
-
 // ----------------------------------------------------------------
 // Segmented control (Month / Week / Day)
 // ----------------------------------------------------------------
@@ -32,10 +31,10 @@
 
 
 // ----------------------------------------------------------------
-// App bar nav link active state
+// Top app bar nav link active state
 // ----------------------------------------------------------------
 (function () {
-  const links = document.querySelectorAll('.nav-link[data-nav]');
+  const links = document.querySelectorAll('.nav-link');
   links.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();

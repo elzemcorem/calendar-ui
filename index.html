@@ -16,105 +16,81 @@
     <!-- ============================================================
          TOP APP BAR
     ============================================================ -->
-    <nav class="app-bar">
+    <header class="app-bar">
       <div class="app-bar-left">
-        <div class="logo-gradient" aria-hidden="true"></div>
-        <div class="nav-links" role="navigation" aria-label="Main navigation">
-          <a class="nav-link active" href="#" data-nav>Overview</a>
-          <a class="nav-link" href="#" data-nav>Projects</a>
-          <a class="nav-link" href="#" data-nav>Tasks</a>
-          <a class="nav-link" href="#" data-nav>Activities</a>
-          <a class="nav-link" href="#" data-nav>Members</a>
-          <a class="nav-link" href="#" data-nav>Storage</a>
-          <a class="nav-link" href="#" data-nav>Settings</a>
-        </div>
+        <div class="app-logo" aria-hidden="true"></div>
+        <nav class="app-nav" aria-label="Main navigation">
+          <a href="#" class="nav-link active">Overview</a>
+          <a href="#" class="nav-link">Projects</a>
+          <a href="#" class="nav-link">Tasks</a>
+          <a href="#" class="nav-link">Activities</a>
+          <a href="#" class="nav-link">Members</a>
+          <a href="#" class="nav-link">Storage</a>
+          <a href="#" class="nav-link">Settings</a>
+        </nav>
       </div>
       <div class="app-bar-right">
-        <div class="search-bar" role="search">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" placeholder="Search or ask AI..." aria-label="Search or ask AI" />
-          <span class="kbd-badge">⌘ K</span>
+        <div class="search-bar">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" placeholder="Search or ask AI..." aria-label="Search or ask AI" />
+          <span class="kbd-badge" aria-label="Keyboard shortcut Command K">⌘ K</span>
         </div>
-        <button class="btn-import">Import</button>
-        <button class="bell-icon-btn" aria-label="Notifications">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <button class="import-btn">Import</button>
+        <button class="notif-btn" aria-label="Notifications">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
         </button>
-        <div class="user-avatar" aria-label="User profile" role="img"></div>
+        <button class="user-avatar-btn" aria-label="User profile"></button>
       </div>
-    </nav>
+    </header>
 
-    <!-- Body row: icon sidebar + main panel -->
-    <div class="body-row">
+    <div class="app-body">
 
-    <!-- ============================================================
-         ICON SIDEBAR
-    ============================================================ -->
-    <aside class="icon-sidebar" aria-label="Navigation icons">
-      <div class="icon-sidebar-top">
+      <!-- ============================================================
+           ICON SIDEBAR
+      ============================================================ -->
+      <aside class="icon-sidebar" aria-label="App navigation">
+        <div class="icon-sidebar-top">
 
-        <!-- Clipboard/copy icon -->
-        <button class="sidebar-icon-btn" aria-label="Clipboard">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="9" y="2" width="6" height="4" rx="1"/>
-            <rect x="5" y="5" width="14" height="17" rx="2"/>
-            <rect x="3" y="7" width="14" height="17" rx="2" fill="currentColor" opacity=".12" stroke="currentColor"/>
-            <path d="M9 2H7a2 2 0 0 0-2 2v1"/>
-            <path d="M15 2h2a2 2 0 0 1 2 2v1"/>
-          </svg>
-        </button>
+          <!-- Clipboard / copy -->
+          <button class="sidebar-icon-btn" aria-label="Clipboard">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          </button>
 
-        <!-- Chat/message icon -->
-        <button class="sidebar-icon-btn" aria-label="Messages">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-          </svg>
-        </button>
+          <!-- Chat / message -->
+          <button class="sidebar-icon-btn" aria-label="Messages">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </button>
 
-        <!-- Document/file icon -->
-        <button class="sidebar-icon-btn" aria-label="Documents">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-          </svg>
-        </button>
+          <!-- Document / file -->
+          <button class="sidebar-icon-btn" aria-label="Documents">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </button>
 
-        <!-- Calendar icon — active -->
-        <button class="sidebar-icon-btn active" aria-label="Calendar" aria-current="page">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-            <line x1="16" y1="2" x2="16" y2="6"/>
-            <line x1="8" y1="2" x2="8" y2="6"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
-          </svg>
-        </button>
+          <!-- Calendar (active) -->
+          <button class="sidebar-icon-btn active" aria-label="Calendar" aria-current="page">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </button>
 
-        <!-- Lightbulb icon -->
-        <button class="sidebar-icon-btn" aria-label="Ideas">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="9" y1="18" x2="15" y2="18"/>
-            <line x1="10" y1="22" x2="14" y2="22"/>
-            <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/>
-          </svg>
-        </button>
+          <!-- Lightbulb -->
+          <button class="sidebar-icon-btn" aria-label="Ideas">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="9" y1="21" x2="15" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><path d="M12 2a7 7 0 0 1 7 7c0 2.5-1.5 4.5-3 6H8c-1.5-1.5-3-3.5-3-6a7 7 0 0 1 7-7z"/></svg>
+          </button>
 
-        <!-- Link/chain icon -->
-        <button class="sidebar-icon-btn" aria-label="Links">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-          </svg>
-        </button>
+          <!-- Link / chain -->
+          <button class="sidebar-icon-btn" aria-label="Links">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
 
-      </div>
-      <div class="icon-sidebar-bottom">
-        <button class="sidebar-plus-btn" aria-label="Add new">+</button>
-      </div>
-    </aside>
+        </div>
+        <div class="icon-sidebar-bottom">
+          <button class="sidebar-icon-plus" aria-label="Add new">+</button>
+        </div>
+      </aside>
 
-    <!-- ============================================================
-         MAIN PANEL
-    ============================================================ -->
-    <main class="main-panel">
+      <!-- ============================================================
+           MAIN PANEL
+      ============================================================ -->
+      <main class="main-panel">
 
       <!-- Top bar -->
       <div class="top-bar">
@@ -356,7 +332,7 @@
       </div><!-- /grid-scroll -->
     </main>
 
-    </div><!-- /body-row -->
+    </div><!-- /app-body -->
 
   </div><!-- /app-wrapper -->
 
