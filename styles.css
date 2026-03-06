@@ -209,7 +209,7 @@ body {
 .app-body {
   flex: 1;
   display: flex;
-  overflow: hidden;
+  overflow: visible;
   gap: 16px;
   padding: 16px 20px 20px 0;
 }
